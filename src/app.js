@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 export const dva = {
   config: {
     onError(err) {
