@@ -8,6 +8,9 @@ import styles from './Login.less';
 
 const { Tab, UserName, Password, Mobile, Captcha, Submit } = Login;
 
+console.log('读取环境变量', process.env.NODE_ENV);
+console.log('读取变量', process.env.APIENV);
+
 @connect(({ login, loading }) => ({
   login,
   submitting: loading.effects['login/login'],
@@ -72,6 +75,8 @@ class LoginPage extends Component {
     const { type, autoLogin } = this.state;
     return (
       <div className={styles.main}>
+        <div>NODE_ENV {process.env.NODE_ENV}</div>
+        <div>APIENV {process.env.APIENV}</div>
         <Login
           defaultActiveKey={type}
           onTabChange={this.onTabChange}
